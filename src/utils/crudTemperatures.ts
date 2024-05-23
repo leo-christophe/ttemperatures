@@ -52,6 +52,17 @@ class TemperatureService {
 
         return temperatures;
     }
+
+    static supprimerTemperature(id: number): Boolean | null {
+        const key = localStorage.key(id)
+        localStorage.removeItem(key)
+        if (localStorage.getItem(key) == null){
+            return true
+        } else {
+            return false
+        }
+
+    }
 }
 
 export default TemperatureService;

@@ -23,13 +23,12 @@ onMounted(() => {
 });
 </script>
 <template>
-    <h2>Températures Enregistrées</h2>
-    <ul>
-        <li v-for="(temperature, index) in temperatures" :key="index">
+    <select name="temps">
+        <option>Températures Enregistrées</option>
+        <option disabled value="{{ temperature.degres }}" v-for="(temperature, index) in temperatures" :key="index">
             {{ temperature.date }} : {{ temperature.degres }}°C
-        </li>
-        
-    </ul>
+        </option>
+    </select>
     <barGraph></barGraph>
     <barChart></barChart>
 </template>
