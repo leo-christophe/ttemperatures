@@ -10,8 +10,7 @@ const router = createRouter({
       path: '/',
       name: 'formulaire',
       component: Formulaire
-    },
-    {
+    },{
       path: '/export',
       name: 'export',
       component: Export

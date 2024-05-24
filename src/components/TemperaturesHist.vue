@@ -38,10 +38,10 @@ const deleteTemp = (id: number) => {
 
         <ul>
             
-            <li v-for="temperature in temperatures" :key="temperature.id">
-                <div id="enregistrement1">{{ temperature.date }}</div>
-                <div id="enregistrement2">{{ temperature.degres }}°C</div>
-                <button type="button" @click="deleteTemp(temperature.id)">🗑️</button>
+            <li v-for="(item, index) in temperatures">
+                <div id="enregistrement1">{{ item.date }}</div>
+                <div id="enregistrement2">{{ item.degres }}°C</div>
+                <button type="button" @click="deleteTemp(index)">🗑️</button>
 
             </li>
         </ul>

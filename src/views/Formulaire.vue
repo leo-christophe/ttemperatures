@@ -22,7 +22,11 @@ function submitForm() {
 
         // Sauvegarder la température
         TemperatureService.sauvegarderTemperature(temp.value, datetime24h.value);
-
+        temperatures.value.forEach((temperature, index) => {
+            if (temperature.temperature == temp.value) {
+                temperatures.value[index].temperature = temp.value;
+            }
+        });
         // Afficher un message de confirmation
         show();
     }
