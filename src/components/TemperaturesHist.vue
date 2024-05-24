@@ -20,14 +20,14 @@ const trierParTemperature = () => {
 };
 
 const recupererTemperatures = () => {
-    temperatures.value = TemperatureService.recupererTemperatures();
+    temperatures.value = TemperatureService.recupererTemperatures().map((temp, index) => ({ ...temp, id: index + 1 }));
 };
 recupererTemperatures();
 
 const deleteTemp = (id: number) => {
     TemperatureService.supprimerTemperature(id);
     // Mise à jour de la liste après suppression
-    temperatures.value = temperatures.value.filter(temp => temp.id !== id);
+    temperatures.value = TemperatureService.recupererTemperatures().map((temp, index) => ({ ...temp, id: index + 1 }));
 };
 </script>
 
